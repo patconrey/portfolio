@@ -1,0 +1,66 @@
+.section {
+    display: flex;
+    align-items: center;
+    padding: 6rem 24rem 6rem 24rem;
+
+    &-no-flex {
+        display: block;
+        padding: 6rem 24rem 6rem 24rem;
+    }
+
+    &:first-child {
+        padding-top: 12rem;
+    }
+
+    @include respond(tab-port) {
+        padding: 6rem 12rem;
+    }
+
+    @include respond(phone) {
+        padding: 4rem;
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+
+    &--vertical-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &--split {
+        @include respond(tab-port) {
+            flex-direction: column;
+        }
+        @include respond(phone) {
+            flex-direction: column;
+        }
+    }
+
+    &--left,
+    &--right {
+        flex: 1;
+        background-color: yellow;
+        min-height: 5rem;
+    }
+
+    &--left-30,
+    &--right-30 {
+        flex: 0 0 30%;
+    }
+
+    &--left-40,
+    &--right-40 {
+        flex: 0 0 40%;
+    }
+
+    &--left-50,
+    &--right-50 {
+        flex: 0 0 50%;
+    }
+
+    &--left-60,
+    &--right-60 {
+        flex: 0 0 60%;
+    }
+}

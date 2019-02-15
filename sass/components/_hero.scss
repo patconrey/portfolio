@@ -1,0 +1,54 @@
+.hero {
+    min-height: 95vh;
+    max-height: 95vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    @include respond(phone) {
+        flex-direction: column;
+    }
+
+    &__background {
+        align-self: stretch;
+        flex: 0 0 40%;
+        background-image: url('../img/hero.jpg');
+        background-position: 40% 0%;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &--ios {
+            background-image: url('../img/scene_launch.jpg');
+        }
+
+        @supports (clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%)) or (-webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%)) {
+            clip-path: polygon(0 0, 90% 0, 100% 95%, 0% 100%);
+        }
+
+        @include respond(tab-port) {
+            background-position: 30% 0%;
+            @supports (clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%)) or (-webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%)) {
+                clip-path: polygon(0 0, 90% 0, 100% 98%, 0% 100%);
+            }
+        }
+
+        @include respond(phone) {
+            height: 90vh;
+            flex: 1;
+            background-position: 50% 30%;
+            @supports (clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%)) or (-webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%)) {
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+            }
+        }
+    }
+
+    &__image {
+        width: 100%;
+        max-height: 95vh;
+    }
+
+    &__message {
+        flex: 1;
+        padding: 4rem;
+    }
+}

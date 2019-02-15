@@ -1,0 +1,43 @@
+.subsection {
+
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    &:not(:first-child) {
+        margin-top: .5rem;
+    }
+
+    @include respond(tab-port) {
+        flex-direction: column;
+    }
+    @include respond(phone) {
+        flex-direction: column;
+    }
+
+    &__left,
+    &__right {
+        flex: 1;
+        min-height: 5rem;
+    }
+
+    &__left-30,
+    &__right-30 {
+        flex: 0 0 30%;
+    }
+
+    &__left-40,
+    &__right-40 {
+        flex: 0 0 40%;
+    }
+
+    &__left-50,
+    &__right-50 {
+        flex: 0 0 50%;
+    }
+
+    &__left-60,
+    &__right-60 {
+        flex: 0 0 60%;
+    }
+}

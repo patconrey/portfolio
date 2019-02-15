@@ -1,0 +1,18 @@
+.heading-primary {
+    font-size: 8rem;
+    font-family: var(--font-serif);
+    @include respond(phone) {
+        font-size: 6rem;
+    }
+}
+
+.heading-secondary {
+    font-size: 2rem;
+    font-family: var(--font-sans);
+}
+
+.description {
+    font-size: 1.6rem;
+    font-family: var(--font-sans);
+    color: var(--color-grey-dark-2);
+}

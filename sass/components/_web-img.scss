@@ -1,0 +1,17 @@
+.web-img {
+    width: 100%;
+    display: block;
+    perspective: 5rem;
+
+    &__image {
+        width: 100%;
+        border-radius: 5rem;
+        background-color: rebeccapurple;
+        box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
+        transition: transform 0.5s;
+        -webkit-transition: transform 0.5s;
+        -moz-transition: transform 0.5s;
+        -o-transition: transform 0.5s;
+        transform: rotateX(.6deg) rotateY(.8deg);
+    }
+}

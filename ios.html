@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Pat Conrey Portfolio</title>
+        <meta name="author" content="Patrick Conrey">
+        <meta name="description" content="A portfolio of iOS, web, and machine learning development.">
+        <meta name="keywords" content="ios,machine,learning,development,web,pat,conrey">
+        <!-- <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon"> -->
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:300,400,700,900|Open+Sans:300,400,600,700,800" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+    </head>
+
+    <body>
+        <nav class="top-nav" id="top-nav">
+            <ul class="top-nav__nav-items top-nav__menu-items">
+                <li class="top-nav__item">
+                    <a href="/index.html" class="top-nav__link">My Skills</a>
+                </li>
+                <li class="top-nav__item">
+                    <a href="/ios.html" class="top-nav__link top-nav__link--active">iOS</a>
+                </li>
+                <li class="top-nav__item">
+                    <a href="/web.html" class="top-nav__link">Web</a>
+                </li>
+                <li class="top-nav__item">
+                    <a href="/machine_learning.html" class="top-nav__link">Machine Learning</a>
+                </li>
+                <li class="top-nav__item">
+                    <a href="#" class="top-nav__link">Products & Companies</a>
+                </li>
+            </ul>
+        </nav>
+        <header class="hero">
+            <div class="hero__background hero__background--ios"></div>
+            <div class="hero__message">
+                <h1 class="heading-primary">iOS Work</h1>
+                <p class="description">
+                    iOS Development was my first entrance into consumer application programming. Since I've started,
+                    I've launched my own company, worked for a startup in Lexington, KY, and am currently working as
+                    an iOS contractor at Bayer Crop Sciences. It all started with my first iOS app, Scene. The image
+                    here is from the night of the launch.
+                    <br><br>
+                    Below are the projects I want to highlight. I've worked on several more so if you want to know more,
+                    please reach out!
+                </p>
+                <nav class="table-of-contents u-margin-top-large">
+                    <ul class="table-of-contents__list">
+                        <li class="table-of-contents__item">
+                            <a href="#mosy" class="table-of-contents__link">Mosy</a>
+                        </li>
+                        <li class="table-of-contents__item">
+                            <a href="#blocks" class="table-of-contents__link">Blocks</a>
+                        </li>
+                        <li class="table-of-contents__item">
+                            <a href="#scene" class="table-of-contents__link">Scene</a>
+                        </li>
+                        <li class="table-of-contents__item">
+                            <a href="#juke" class="table-of-contents__link">Juke</a>
+                        </li>
+                        <li class="table-of-contents__item">
+                            <a href="#cipi" class="table-of-contents__link">Cipi</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+
+            <!-- MOSY -->
+            <section class="section section-no-flex" id="mosy">
+                <div class="subsection">
+                    <div class="subsection__left-40">
+                        <h1 class="heading-primary">Mosy</h1>
+                        <p class="description">
+                            This app was a lot of fun to program and design. Users can create an account with their 
+                            email, password and some other information, e.g., profile picture, birthday, etc. They can 
+                            search for others and start conversations, lock certain conversations with a passcode they 
+                            choose, send and save images and videos, view them later in custom media players, and update 
+                            their password and email.
+                        </p>
+                    </div>
+                    <div class="subsection__right">
+                        <figure class="figure">
+                            <img class="figure__image" src="img/mosy_overview.png" alt="mosy screenshot">	
+                            <figcaption class="figure__caption">Mosy password screen, login screen, and gallery view on iPhones.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="subsection">
+                    <div class="subsection__left">
+                        <figure class="figure">
+                            <img class="figure__image" src="img/mosy.png" alt="mosy screenshot">	
+                            <figcaption class="figure__caption">Mosy messages feed. New messages pop up here!</figcaption>
+                        </figure>
+                    </div>
+                    <div class="subsection__right-50">
+                        <p class="description">
+                            It all started with a personal challenge: how fast can I develop a robust chat application? 
+                            Firebase was a huge help, and OneSignal beautifully handled push notifications. The design 
+                            was largely inspired by purple, my favorite color, and Google's Material standard. This was 
+                            the next big project I worked on after my first app, Scene. I wanted to focus on the user. 
+                            At the time, that meant pretty animations and a good color scheme. With research, I came to 
+                            learn about accessibility and developing for all users regardless of their culture, capabilities, 
+                            or background. I learned a ton and refine those lessons every day.
+                        </p>
+                    </div>
+                </div>
+                <div class="subsection">
+                    <div class="subsection__left-50">
+                        <p class="description">
+                            All of those features are built, but there's still work to do before I put it on the App Store. 
+                            It seems that there's a new chat application everyday. I want to convert the underlying network 
+                            calls to utilize a mesh network for localized communication. This would be useful if, for example, 
+                            you're on a trip with your friends and don't want to use up data.
+                        </p>
+                    </div>
+                    <div class="subsection__right">
+                        <figure class="figure">
+                            <img class="figure__image" src="img/mosy_ipad.png" alt="mosy screenshot">	
+                            <figcaption class="figure__caption">Mosy gallery view on an iPad</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BLOCKS -->
+            <section class="section section-no-flex" id="blocks">
+                <div class="subsection">
+                    <div class="subsection__left-40">
+                        <h1 class="heading-primary">Blocks</h1>
+                        <p class="description">
+                            This app takes building blocks to the AR stage. You can select different materials and 
+                            build whatever structure you can imagine right in your living room. You can save structures,
+                            which triggers the app to construct a custom XML file describing your structure, saving it 
+                            locally and uploading it to a sever. Ultimately, I want to be able to share structures 
+                            between users, create fun textures with special properties, and collaboratively build in 
+                            realtime with a friend.
+                            <br><br>
+                            I'm curious about the role AR will play in tech over the next couple years. I'm 
+                            particularly excited about its potential in the context of education. I'd love to chat 
+                            about this, please drop me a line!
+                            <br><br>
+                            Credit for this structure goes to my girlfriend, an electrical engineer pursuing a 
+                            Masters degree at UC Berkeley.
+                        </p>
+                    </div>
+                    <div class="subsection__right">
+                        <video class="figure__video" controls>
+                            <source src="img/blocks.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SCENE -->
+            <section class="section section-no-flex" id="scene">
+                <div class="subsection">
+                    <div class="subsection__left-40">
+                        <h1 class="heading-primary">Scene</h1>
+                        <p class="description">
+                            Scene was a social app that let users in a given city log on and see what was happening around them. 
+                            They could like and comment on scenes (the name we assigned to event listings). We provided 
+                            authentication through email, Facebook, and anonymous users. The entire app was built on Firebase 
+                            and we handled push notifications with OneSignal. Scene was my first dive into programming beyond 
+                            the python and C++ encountered in the standard Electrical Engineering curriculum. I learned Swift 
+                            through countless hours of Youtube videos, reading Apple's documentation, and Stack Overflow. 
+                            It was an ... experience ... to say the least.
+                        </p>
+                    </div>
+                    <div class="subsection__right">
+                        <figure class="figure">
+                            <img class="figure__image" src="img/scene_2.png" alt="scene screenshot on an iPhone 7">	
+                            <figcaption class="figure__caption">
+                                Scene profile page, event detail page, and push notification (top to bottom).
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="subsection">
+                    <div class="subsection__left">
+                        <figure class="figure">
+                            <img class="figure__image" src="img/scene.png" alt="scene layouts">	
+                            <figcaption class="figure__caption">
+                                Scene login page, event feed, and commenting view on iPhones.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="subsection__right-50">
+                        <p class="description">
+                            My friend came up with the idea in our sophomore year of college. I designed all of the 
+                            interfaces over the next few months and we began scouting for a mobile developer. None of 
+                            them worked out, so I decided to program it myself. Before I started learning the language, 
+                            I sent screenshots of the UI to my friend in Silicon Valley -- the only developer I knew. 
+                            His advice was simple: "That's ambitious. But doable, definitely doable!" Enduring innumerable 
+                            crashes, failed features, bad designs, tons of revisions, and full course loads for two 
+                            degrees, I launched Scene on the App Store in April 2017.
+                            <br>
+                            What started with a simple idea launched me on a pretty awesome journey. Through it, I learned 
+                            the basics of iOS development, team management, project planning, and even talked to angel 
+                            investors. Since April 2017, I've developed and designed all of the projects you see on this site.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JUKE -->
+            <section class="section section-no-flex" id="juke">
+                <div class="subsection">
+                    <div class="subsection__left-40">
+                        <h1 class="heading-primary">Juke</h1>
+                        <p class="description">
+                            Juke was a fun, small project I made for a friend: she didn't listen to music too much since she 
+                            liked CDs and was rarely in her car. I got the idea for a music player interface that prominently 
+                            displays a spinning CD of the album art for the current song.
+                            <br><br>
+                            This app isn't connected to the internet or a streaming service. It would just come with a 
+                            preloaded playlist of songs. The code isn't hosted on my GitHub, but if you're interested please 
+                            feel free to reach out!
+                            <br><br> 
+                            The songs in the mockup are The Revivalists' "Soul Fight" and Travis Scott's "coordinate," 
+                            gratefully used here without the intent of copyright infringement.
+                        </p>
+                    </div>
+                    <div class="subsection__right">
+                        <figure class="figure">
+                            <img class="figure__image" src="img/juke.png" alt="juke screenshot">	
+                            <figcaption class="figure__caption">
+                                The music interface for Juke, focusing on the CD-like interface.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JUKE -->
+            <section class="section section-no-flex" id="cipi">
+                <div class="subsection">
+                    <div class="subsection__left-50">
+                        <h1 class="heading-primary">Cipi</h1>
+                        <p class="description">
+                            Are you bad at keeping in touch with people? Me too. I made this app to help you, and me, and 
+                            everybody else.
+                            <br><br>
+                            Cipi will cycle through your contacts and you can set reminders to text the people that pop up. 
+                            Hope you get back in touch with some friends :)
+                            <br><br> 
+                            Again, I drew on Google's Material for the design and threw in some personal touches.
+                        </p>
+                    </div>
+                    <div class="subsection__right">
+                        <figure class="figure">
+                            <img class="figure__image" src="img/cipi.png" alt="cipi screenshot">	
+                            <figcaption class="figure__caption">
+                                Cipi screenshots, showing the UI before (left) and after (right) asking the app to remind you 
+                                to contact somebody.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+    </body>
+
+    <script>
+    const navBar = document.getElementById("top-nav");
+    window.addEventListener("scroll", function (event) {
+        if (this.scrollY > (300 * 2)) {
+            navBar.classList.add("top-nav--white");
+        }
+        else {
+            navBar.classList.remove("top-nav--white");
+        }
+    });
+    </script>
+</html>
