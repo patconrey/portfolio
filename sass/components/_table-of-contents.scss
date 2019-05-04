@@ -21,13 +21,15 @@
         font-size: 1rem;
         font-weight: var(--font-weight-bold);
         padding: .8rem 1.5rem;
-        display: block;
+        display: flex;
+        justify-content: center;
+        position: relative;
         text-transform: uppercase;
         text-align: center;
         border: 1px solid var(--color-primary);
         background-color: var(--color-grey-light-1);
         color: var(--color-primary);
-        border-radius: .5rem;
+        border-radius: 50rem;
         transition: all .3s;
 
         &:link,
@@ -37,6 +39,7 @@
 
         &:hover {
             background-color: var(--color-primary-transparent);
+            text-decoration: underline;
         }
     }
 

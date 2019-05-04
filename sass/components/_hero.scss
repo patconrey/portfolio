@@ -18,7 +18,11 @@
         background-size: cover;
 
         &--ios {
-            background-image: url('../img/scene_launch.jpg');
+            background-image: url('../img/hero_ios.jpg');
+        }
+
+        &--web {
+            background-image: url('../img/hero_web.jpg');
         }
 
         @supports (clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%)) or (-webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%)) {
