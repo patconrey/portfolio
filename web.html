@@ -60,7 +60,7 @@
                     </div>
                     <div class="subsection__right">
                         <figure class="web-img">
-                            <img class="web-img__image" src="img/home_preview.png" alt="SGA landing page screenshot">	
+                            <img class="web-img__image lazy-image" src="img/home_preview_blur.png" data-src="img/home_preview.png" alt="SGA landing page screenshot">	
                             <figcaption class="figure__caption web-img__caption">
                                 The landing view for the SGA homepage. We wanted an easy way for curious
                                 students to get in touch. We decided it would be best to have an email entry.
@@ -73,7 +73,7 @@
                 <div class="subsection">
                     <div class="subsection__left">
                             <figure class="web-img">
-                                <img class="web-img__image" src="img/funding_preview.png" alt="SGA funding page screenshot">	
+                                <img class="web-img__image lazy-image" data-src="img/funding_preview.png" src="img/funding_preview_blur.png" alt="SGA funding page screenshot">	
                                 <figcaption class="figure__caption web-img__caption">
                                     SGA gives a lot of money to student orgs. We have legislation that
                                     orchestrates the process. We wanted to help students understand the
@@ -112,7 +112,7 @@
                     </div>
                     <div class="subsection__right">
                         <figure class="web-img">
-                            <img class="web-img__image" src="img/legislation_preview.png" alt="SGA legislation page screenshot">	
+                            <img class="web-img__image lazy-image" data-src="img/legislation_preview.png" src="img/legislation_preview_blur.png" alt="SGA legislation page screenshot">	
                             <figcaption class="figure__caption web-img__caption">
                                 Our legislation affects how students can get funding, participate
                                 in elections, and behave as a member of SGA. On our previous site,
@@ -126,7 +126,7 @@
                 <div class="subsection">
                     <div class="subsection__left">
                         <figure class="web-img">
-                            <img class="web-img__image" src="img/profiles_preview.png" alt="SGA executive page screenshot">	
+                            <img class="web-img__image lazy-image" data-src="img/profiles_preview.png" src="img/profiles_preview_blur.png" alt="SGA executive page screenshot">	
                             <figcaption class="figure__caption web-img__caption">
                                 There are lots of people in SGA. We wanted to make sure that 
                                 anybody would be able to see who's representing them easily and
@@ -166,7 +166,7 @@
                     </div>
                     <div class="subsection__right">
                         <figure class="web-img">
-                            <img class="web-img__image" src="img/records_preview.png" alt="SGA records page screenshot">	
+                            <img class="web-img__image lazy-image" data-src="img/records_preview.png" src="img/records_preview_blur.png" alt="SGA records page screenshot">	
                             <figcaption class="figure__caption web-img__caption">
                                 SGA is required by *law* to maintain records of its meetings.
                                 We created a way that students can easily get the most recent 
@@ -180,14 +180,33 @@
     </body>
 
     <script>
-    const navBar = document.getElementById("top-nav");
-    window.addEventListener("scroll", function (event) {
-        if (this.scrollY > (300 * 2)) {
-            navBar.classList.add("top-nav--white");
+        const navBar = document.getElementById("top-nav")
+        window.addEventListener("scroll", function (event) {
+            if (this.scrollY > (300 * 2)) {
+                navBar.classList.add("top-nav--white")
+            }
+            else {
+                navBar.classList.remove("top-nav--white")
+            }
+        })
+
+        const lazyImages = [...document.querySelectorAll(".lazy-image")]
+        console.log(lazyImages)
+        const lazyLoad = () => {
+            const inAdvance = 0
+            lazyImages.forEach((image, index) => {
+                console.log(index)
+                if (image.offsetTop < window.innerHeight + window.pageYOffset + inAdvance) {
+                    image.src = image.dataset.src
+                    image.classList.remove("lazy-image")
+                    delete lazyImages[index]
+                }
+            });
         }
-        else {
-            navBar.classList.remove("top-nav--white");
-        }
-    });
+
+        lazyLoad()
+
+        window.addEventListener("scroll", lazyLoad)
+        // window.addEventListener("resize", _.throttle(lazyLoad, 50))
     </script>
 </html>
