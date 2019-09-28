@@ -8,6 +8,7 @@
 @import "base/utilities";
 
 @import "components/button";
+@import "components/blog-preview";
 @import "components/figure";
 @import "components/hero";
 @import "components/section";
@@ -18,6 +19,8 @@
 @import "components/web-img";
 
 @import "layout/layout";
+@import "layout/blog-post";
+@import "layout/footer";
 
 @import "abstracts/hamburger-settings";
 @import '../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss';

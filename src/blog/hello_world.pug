@@ -1,0 +1,42 @@
+extends blog_base
+include ../mixins
+
+block navigation
+    +nav_bar("blog")
+
+block header
+    header(class="hero hero__gradient")
+        .hero__message
+            h1(class="heading-primary heading-primary--white") Hello, world!
+            p(class="description description--white")
+                | "Yay, another blog!" - Nobody ever.
+            p(class="description description--white")
+                | September 24th, 2019.
+
+block body
+    section.blog-post
+        p.blog-post__content
+        | My page already has an "About Me" section &mdash; a whole tab no less! So, why am I doing
+        | a blog as well? Can he really be that vain? Does the internet need more clutter? Short answer,
+        | no. No, it doesn't.
+        p.blog-post__content
+        | I'm interested in the idea of learning publicly. I've always been one to hide away and
+        | study some topic, waiver on the fence about a question until I was certain of its answer. 
+        | I'm not sure this approach has always been to my benefit. To be honest, I think there's a great
+        | deal of value to be wrought from learning in front of people, in trying to figure things out
+        | as you go, of being wrong and having somebody tell you why.
+        p.blog-post__content
+        | So, here I am, dedicating myself *publicly* to this aim! I will use this platform to learn,
+        | to explain my thoughts, to ask my questions. By volume, this blog will likely be tutorial-type
+        | posts about something I struggled with. Due to my digital signal processing course, I'll have 
+        | ample inspiration.
+        p.blog-post__content
+        | I'm also excited by this because I've written the whole thing from scratch, which has been a
+        | blast so far. I'm thrilled to flesh out a blogging platform and will likely write a post or two
+        | about the things I learned and how I learned them. One of the big things I'm excited for is 
+        | the integration with MathJax, a LaTeX rendering engine for the web! Check this out:
+        | \[ \delta (n - m) \Leftrightarrow z^{ - m} ,\left| z \right| > 1 \]
+        | For the interested reader, the above equation represents the Z-transform of a time-shifted
+        | \(\delta\) function. And it's built right in! That's not a picture! I'm pumped!
+        p.blog-post__content
+        | Anyway, thanks for reading so far. I'm excited to see where this goes!

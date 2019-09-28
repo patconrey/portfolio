@@ -1,0 +1,38 @@
+mixin skill(title, rating, image_name, color)
+    div(class="skills-display__skill animate-me")
+        div(class="skills-display__icon-container")
+            img(src="img/icons/"+image_name alt={title} class="skills-display__icon")
+
+        div(class="skills-display__description")
+            div(class="skills-display__skill-title")= title
+            div(class="skills-display__knowledge-display")
+                - var n = 1
+                while n <= 5
+                    if n <= rating
+                        span(class="skills-display__star" style="color:"+color+";") ★
+                    else
+                        span(class="skills-display__star" style="color:"+color+";") ☆
+                    - n++
+
+
+mixin nav_bar(active_link)
+    nav(class="top-nav" id="top-nav")
+        ul(class="top-nav__nav-items top-nav__menu-items")
+            li(class="top-nav__item")
+                a(href="/" class=active_link==="home" ? "top-nav__link top-nav__link--active" : "top-nav__link") About Me
+            li(class="top-nav__item")
+                a(href="/ios.html" class=active_link==="ios" ? "top-nav__link top-nav__link--active" : "top-nav__link") iOS
+            li(class="top-nav__item")
+                a(href="/web.html" class=active_link==="web" ? "top-nav__link top-nav__link--active" : "top-nav__link") Web
+            li(class="top-nav__item")
+                a(href="/blog.html" class=active_link==="blog" ? "top-nav__link top-nav__link--active" : "top-nav__link") Blog
+
+mixin blog_preview(title, description, link, image_link, date)
+    a(href="/blog/"+link class="blog-preview__container-link")
+        article.blog-preview
+            figure.blog-preview__image-container
+                img(class="blog-preview__image" src=image_link)
+            .blog-preview__content-container
+                h1.blog-preview__title= title
+                p.description= description
+                span(class="blog-preview__date description")= date

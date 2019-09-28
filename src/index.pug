@@ -1,0 +1,85 @@
+extends base.pug
+include mixins
+
+block navigation
+    +nav_bar("home")
+
+block header
+    header(class="hero")
+        .hero__background
+        .hero__message
+            h1(class="heading-primary") Hey there!
+            p(class="description")
+                | I'm a Ph.D. student at Carnegie Mellon University. I love cooking, app development, mathematics, and emojis.
+                | Welcome to my corner of the internet. I'm always happy to talk about anything on here. Please don't hesistate to reach out.
+                br
+                br
+                | Best,
+                br
+                | Pat Conrey.
+
+block body
+    section(class="section section--vertical-content")
+        h1(class="heading-primary" id="about-me") About Me
+        p(class="description")
+            | I graduated from the University of Kentucky in December of 2018 with degrees in Electrical Engineering
+            | and Mathematics. While at UK, I was able to explore all sorts of interests, from policy work in our Student
+            | Government Association to research in machine learning. My interests are all over the place and I'm constantly
+            | learning more about them.
+            |
+            |
+            | I've had jobs in iOS and web development in Lexington, Kentucky. I've worked as a mobile application contractor
+            | at Bayer Crop Sciences in St. Louis, Missouri.
+            |
+            |
+            | Currently, I'm in my first year of a Ph.D. at Carnegie Mellon in Electrical Engineering. I'm focusing on speech recognition,
+            | deep learning, and classical pattern recognition. I'm passionate about bringing machine learning into consumer applications, 
+            | easing end-user experiences and building ground-breaking tech.
+
+    //- //- <!-- SOME THINGS I'M GOOD AT -->
+    section(class="section section--vertical-content")
+        h3(class="heading-primary") My Skills
+        p(class="description")
+            | Since I've gotten into programming, I can't stop learning new things. This collection might seem sort of 
+            | random, it is! This list is constantly evolving, and the ratings I've provided indicate my level of
+            | comfort with each technology.
+            |
+            |
+            | Each of these technologies have a huge number of subcomponents (e.g., Swift has dozens of foundational
+            | APIs for interacting with things like Bluetooth or GPS). If you're wondering if I'm capable in a particular
+            | part of any of these technologies, reach out!
+
+        //- <!-- DATA ANALYTICS -->
+        h3(class="heading-secondary u-margin-top-medium") Machine Learning
+        div(class="skills-display")
+            +skill("matlab", 5, "matlab-sm.png", "#5790bf")
+            +skill("python", 5, "python.png", "#ffd242")
+            +skill("tensorflow", 5, "tf.png", "#e55b2d")
+            +skill("keras", 3, "keras.png", "#d00000")
+
+        //- <!-- MOBILE -->
+        h3(class="heading-secondary u-margin-top-medium") Mobile Development
+        div(class="skills-display")
+            +skill("swift", 4, "swift.png", "#fc2f22")
+            +skill("react native", 5, "react.png", "#61dafb")
+
+
+        //- <!-- WEB -->
+        h3(class="heading-secondary u-margin-top-medium") Web Development
+        div(class="skills-display")
+            +skill("HTML 5", 5, "html.png", "#e34c26")
+            +skill("Javascript ES6", 5, "js.png", "#63a815")
+            +skill("SASS", 5, "sass.png", "#cd679a")
+            +skill("Node.js", 5, "node.png", "#80bd01")
+            +skill("React", 5, "react.png", "#61dafb")
+            +skill("PHP", 3, "php.png", "#6082bb")
+            +skill("Symfony", 4, "symfony.png", "#222")
+            +skill("D3", 4, "d3.png", "#c2594f")
+            +skill("Firebase", 4, "firebase.png", "#ffa711")
+
+        //- <!-- DESIGN -->
+        h3(class="heading-secondary u-margin-top-medium") Design Prototyping
+        div(class="skills-display")
+            +skill("Illustrator", 4, "ai.png", "#ff7f18")
+            +skill("Photoshop", 4, "ps.png", "#31c4f0")
+            +skill("Sketch", 4, "sketch.png", "#ec6c01")
