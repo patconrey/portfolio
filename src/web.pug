@@ -1,0 +1,135 @@
+extends base
+include mixins
+
+block navigation
+    +nav_bar("web")
+
+block header
+    header(class="hero")
+        //- div(class="hero__background hero__background--web lazy-background-image")
+        div(class="hero__background hero__background--web")
+        .hero__message
+            h1(class="heading-primary") Web Work
+            p(class="description")
+                | I didn't really expect to work too much in web. I was barely competent with HTML and CSS when I was thrown
+                | into a PHP project. I learned a lot. Since then, I fell in love with frontend web work. I learned SCSS
+                | through a udemy course and now it's my preferred domain.
+                br
+                br
+                | Below is a project I want to highlight. It aws a blast to build and collaborate on, please let
+                | me know if you have questions!
+
+block body
+    section(class="section section-no-flex" id="SGA")
+        .subsection
+            .subsection__left-50
+                h1.heading-primary SGA
+                p.description
+                    | I loved being a part of the University of Kentucky's Student Government Association (SGA). It taught
+                    | me a lot that I hadn't been exposed to in my engineering curriculum. However, our site was terrible.
+                    | It was a wordpress site that suffered years of mismanagement and neglect. By the time I took over as 
+                    | Directory of Technology, the site was unusably slow and usually hacked. When SGA's advisor got an email
+                    | from the dean of a college at a different university saying that our site was redirecting people to 
+                    | explicit content, I knew it was time for a groundup rebuild.
+
+            .subsection__right
+                figure.web-img
+                    img(class="web-img__image lazy-image" src="img/home_preview_blur.png" data-src="img/home_preview_scaled.png" alt="SGA landing page screenshot")
+                    figcaption(class="figure__caption web-img__caption")
+                        | The landing view for the SGA homepage. We wanted an easy way for curious
+                        | students to get in touch. We decided it would be best to have an email entry.
+                        | We've collected lots of emails! We noticed some spam, so we honeypotted the 
+                        | field and fixed the problem.
+
+        .subsection
+            .subsection__left
+                figure.web-img
+                    img(class="web-img__image lazy-image" data-src="img/funding_preview_scaled.png" src="img/funding_preview_blur.png" alt="SGA funding page screenshot")
+                    figcaption(class="figure__caption web-img__caption")
+                        | SGA gives a lot of money to student orgs. We have legislation that
+                        | orchestrates the process. We wanted to help students understand the
+                        | ways to get funding and the types of funding we have to help them
+                        | get the best for their organization!
+
+            .subsection__right-50
+                p.description
+                    | I wanted to address the root cause of the underlying problem: the people previously responsible for the
+                    | site weighed it down with plugins and widgets. Collaborating with the executive team, we decided that the 
+                    | new site would have minimal features. No calendars, no image carousels, no blogs. We identified a number of
+                    | use cases and derived our features from there.
+                    br
+                    br
+                    | Students rely on SGA for a lot of resources, some they don't even realize we have!
+                    | I think the most common resource is funding. SGA gives a lot of money to on campus orgs
+                    | and the process can be pretty confusing. We wanted to clearly lay out the process and types
+                    | of funding we have.
+
+        .subsection
+            .subsection__left-50
+                p.description
+                    | Since our legislation outlines the ways to be elected and run a campaign
+                    | as well as how to receive funding from SGA, we needed to make all of
+                    | those resources easily accessible. We built the Legislation page and a
+                    | way admins can upload new versions of legislation from a custom CMS.
+                    br
+                    br
+                    | Students generally didn't know all of the services we provide, many
+                    | of which are super useful. We wanted a way to showcase them
+                    | and provide ways for students to get in touch with the people 
+                    | that run them. 
+
+            .subsection__right
+                figure.web-img
+                    img(class="web-img__image lazy-image" data-src="img/legislation_preview_scaled.png" src="img/legislation_preview_blur.png" alt="SGA legislation page screenshot")
+                    figcaption(class="figure__caption web-img__caption")
+                        | Our legislation affects how students can get funding, participate
+                        | in elections, and behave as a member of SGA. On our previous site,
+                        | our legislation was constantly out of date and hard to find. We fixed
+                        | this! Admins can update the legislation versions from our custom CMS, 
+                        | keeping every student up to date.
+
+        .subsection
+            .subsection__left
+                figure.web-img
+                    img(class="web-img__image lazy-image" data-src="img/profiles_preview_scaled.png" src="img/profiles_preview_blur.png" alt="SGA executive page screenshot")
+                    figcaption(class="figure__caption web-img__caption")
+                        | There are lots of people in SGA. We wanted to make sure that 
+                        | anybody would be able to see who's representing them easily and
+                        | quickly. The profiles are managed through the CMS and can be readily
+                        | edited or deleted.
+
+            .subsection__right-50
+                p.description
+                    | Students vote for their representation every spring. When things
+                    | come up that affect students, they want to be able to get in 
+                    | contact with the people that can fix the issues. We created 
+                    | profiles complete with headshots, position titles, and
+                    | contact information for everybody in SGA.
+                    | You can find these under the Branches tab.
+                    br
+                    br
+                    | We wanted students to feel like they were able to join our 
+                    | organization, so we needed a way to collect emails from 
+                    | curious visitors. We put the email form directly on the home
+                    | page so it was impossible to miss.
+
+        .subsection
+            .subsection__left-50
+                p.description
+                    | The site took the  majority of a semester to build. We used 
+                    | Symfony and created a CMS, accessible for non-technical admins,
+                    | that could easily manage all of the content on the site.
+                    br
+                    br
+                    | The feedback was immediate and kind. We collected dozens of emails and got more people involved than we had 
+                    | before. Students use the site to get information on our services. People have downloaded meeting minutes and 
+                    | legislation. Administrators were thrilled. It was a big win. Currently the site is maintained by Hayden Free,
+                    | who is doing a fantastic job.
+
+            .subsection__right
+                figure.web-img
+                    img(class="web-img__image lazy-image" data-src="img/records_preview_scaled.png" src="img/records_preview_blur.png" alt="SGA records page screenshot")
+                    figcaption(class="figure__caption web-img__caption")
+                        | SGA is required by *law* to maintain records of its meetings.
+                        | We created a way that students can easily get the most recent 
+                        | minutes for whatever committee they want!    

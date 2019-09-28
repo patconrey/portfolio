@@ -1,0 +1,30 @@
+extends base.pug
+include mixins
+
+block navigation
+    +nav_bar("blog")
+
+block header
+    header.hero
+        div(class="hero__background hero__background--blog")
+        .hero__message
+            h1(class="heading-primary") Learning Publicly
+            p(class="description")
+                | I'm planning to write about things I learn as I learn them. I'm going to do this
+                | for a couple reasons: I want to share what I learn and what I'm interested in; 
+                | Explaining ideas helps me understand them; This gives me an opportunity to make
+                | demos.
+            br
+            p(class="description")
+                | So, I am going to learn publicly. Whenever I learn something that's interesting, I'll
+                | write up an explanation and talk about why I think it's awesome. I don't think this will
+                | be made up of exclusively technical content. I'm interested in lots of things outside of
+                | engineering: baking, emojis, politics, cats, and corgis. 
+            br
+            p(class="description") 
+                | Photo by Nick Fewings on Unsplash
+
+block body
+    section(class="section section--vertical-content")
+        h1(class="heading-primary" id="about-me") Posts
+        +blog_preview( "Hello, world!", "\"Yay, another blog!\" - Nobody Ever", "hello_world.html", "https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2800&q=80", "September 24th, 2019")
