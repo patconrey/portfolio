@@ -16,16 +16,35 @@ mixin skill(title, rating, image_name, color)
 
 
 mixin nav_bar(active_link)
-    nav(class="top-nav" id="top-nav")
-        ul(class="top-nav__nav-items top-nav__menu-items")
-            li(class="top-nav__item")
-                a(href="/" class=active_link==="home" ? "top-nav__link top-nav__link--active" : "top-nav__link") About Me
-            li(class="top-nav__item")
-                a(href="/ios.html" class=active_link==="ios" ? "top-nav__link top-nav__link--active" : "top-nav__link") iOS
-            li(class="top-nav__item")
-                a(href="/web.html" class=active_link==="web" ? "top-nav__link top-nav__link--active" : "top-nav__link") Web
-            li(class="top-nav__item")
-                a(href="/blog.html" class=active_link==="blog" ? "top-nav__link top-nav__link--active" : "top-nav__link") Blog
+    header.main-menu
+        a(id="main-menu-toggle"
+            href="#main-menu"
+            class="main-menu__toggle"
+            aria-label="Open main menu")
+            span(class="sr-only") Open main menu
+            i(class="material-icons" aria-hidden="true") menu
+        
+        nav(class="main-menu__navigation" id="main-menu" aria-label="Main menu")
+            a(href="#main-menu-toggle"
+                id="main-menu-close"
+                class="main-menu__menu-close"
+                aria-label="Close main menu")
+                span(class="sr-only") Close main menu
+                i(class="material-icons" aria-hidden="true") close
+
+            ul(class="main-menu__nav-items" id="navigation-menu")
+                li(class="main-menu__item")
+                    a(href="/" class=active_link==="home" ? "main-menu__link main-menu__link--active" : "main-menu__link") About Me
+                li(class="main-menu__item")
+                    a(href="/ios.html" class=active_link==="ios" ? "main-menu__link main-menu__link--active" : "main-menu__link") iOS
+                li(class="main-menu__item")
+                    a(href="/web.html" class=active_link==="web" ? "main-menu__link main-menu__link--active" : "main-menu__link") Web
+                li(class="main-menu__item")
+                    a(href="/blog.html" class=active_link==="blog" ? "main-menu__link main-menu__link--active" : "main-menu__link") Blog
+        a(href="#main-menu-toggle"
+            class="backdrop"
+            tabindex="-1"
+            aria-hidden="true" hidden)
 
 mixin blog_preview(title, description, link, image_link, date)
     a(href="/blog/"+link class="blog-preview__container-link")
