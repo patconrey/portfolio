@@ -1,4 +1,4 @@
-.top-nav {
+.main-menu {
     position: absolute;
     top: 0;
     left: 0;
@@ -8,12 +8,99 @@
     padding: 0 3rem;
     transition: all .3s;
     font-size: 1.4rem;
+    display: flex;
+    justify-content: flex-end;
 
-    &__menu-items {
-        visibility: visible;
+    &__navigation {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        transition: left 0.3s ease;
+        z-index: 999;
+        width: 100%;
 
-        @include respond(tab-port) {
-            visibility: hidden;
+        @include respond(phone) {
+            display: none;
+            left: -20rem;
+            // padding: .75rem 1.5rem;
+            padding: .75rem 4.5rem;
+
+            &:target,
+            &[aria-expanded="true"] {
+                display: flex;
+                align-items: flex-end;
+                flex-direction: column;
+                left: 0;
+                outline: none;
+                -moz-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+                -webkit-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+                box-shadow: 3px 0 12px rgba(0,0,0,.25);
+            }
+
+            &:target .main-menu__toggle,
+            &[aria-expanded="true"] .main-menu__toggle {
+                display: none;
+            }
+
+            &:target .main-menu__menu-close,
+            &[aria-expanded="true"] .main-menu__menu-close {
+                z-index: 1001;
+            }
+
+            &:target .main-menu__nav-items,
+            &[aria-expanded="true"] .main-menu__nav-items {
+                position: relative;
+                z-index: 1000;
+            }
+
+            &:target + .backdrop,
+            &[aria-expanded="true"] + .backdrop {
+                position: absolute;
+                display: block;  
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 998;
+                background: #000;
+                background: rgba(0,0,0,.95);
+                cursor: default;
+            }
+
+            @supports (position: fixed) {
+                &,
+                &:target + .backdrop,
+                &[aria-expanded="true"] + .backdrop {
+                position: fixed;
+                }
+            }
+        }
+    }
+
+    &__menu-close {
+        color: #fff;
+        display: none;
+        @include respond(phone) {
+            display: block;
+        }
+    }
+
+    &__toggle {
+        display: inline-block;
+        padding: .75rem 1.5rem;
+        line-height: 1rem;
+        font-size: 1rem;
+        color: #fff;
+        transition: color .3s;
+
+        &:hover,
+        &:focus {
+            color: var(--color-primary);
+        }
+
+        display: none;
+        @include respond(phone) {
+            display: block;
         }
     }
     
@@ -31,9 +118,20 @@
     &__nav-items {
         list-style: none;
         display: flex;
-        align-items: stretch;
         justify-content: flex-end;
+        align-items: stretch;
+        min-height: 100%;
+        margin: 0;
         padding: 3rem 0;
+        &--active {
+            display: flex !important;
+            flex-direction: column;
+        }
+        @include respond(phone) {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+        }
     }
 
     &__item {
@@ -45,6 +143,15 @@
         &:not(:last-child) {
             margin-right: 1rem; 
         }
+        @include respond(phone) {
+            margin: 0;
+            &:not(:last-child) {
+                margin: 0; 
+            }
+            &:hover {
+                border-bottom: 2px solid var(--color-grey-dark-1);
+            }
+        }
     }
 
     &__link {
@@ -55,7 +162,7 @@
         justify-content: center;
         padding: 0 1.5rem;
         transition: all .2s;
-        transition-property: background-color, font-size, color, border;
+        transition-property: background-color, font-size, color;
         box-sizing: border-box;
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
@@ -63,19 +170,32 @@
         &--active {
             color: var(--color-grey-dark-1);
             border-bottom: 2px solid var(--color-grey-dark-1);
+            @include respond(phone) {
+                color: #fff;
+                border-bottom: 2px solid #fff;
+            }
             &:hover {
                 border-bottom: 2px solid var(--color-grey-dark-1) !important;
             }
         }
 
         &:hover {
-            border: 1px dashed var(--color-grey-light-2);
+            @include respond(phone) {
+                border: none;
+            }
+            border-bottom: 2px solid var(--color-grey-dark-1);
             color: var(--color-grey-dark-2);
         }
 
         &:link,
         &:visited {
             text-decoration: none;
+        }
+
+        @include respond(phone) {
+            padding: 3rem 0 3rem 3rem;
+            font-size: 2.4rem;
+            text-align: right;
         }
     }
 
