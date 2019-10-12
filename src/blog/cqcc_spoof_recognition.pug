@@ -1,6 +1,12 @@
 extends blog_base
 include ../mixins
 
+block og
+    meta(property="og:title" content="Blog | Voice Spoofing")
+    meta(property="og:description" content="The motivation, hypotheses, and plan for a project in machine learning and signal processing.")
+    meta(property="og:image" content="https://images.unsplash.com/photo-1512446816042-444d641267d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
+    meta(property="og:url" content="http://patconrey.com/blog")
+
 block navigation
     +nav_bar("blog")
 
