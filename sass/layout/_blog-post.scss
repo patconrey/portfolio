@@ -4,7 +4,7 @@
     font-family: var(--font-sans);
 
     @include respond(tab-port) {
-        padding: 6rem 6rem;
+        padding: 2rem 2rem;
     }
 
     @include respond(phone) {
