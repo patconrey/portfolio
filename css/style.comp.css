@@ -240,6 +240,8 @@ body {
     background-position: 40% 0%;
     background-repeat: no-repeat;
     background-size: cover; }
+    .hero__background--blog-cqcc {
+      background-image: url("https://images.unsplash.com/photo-1512446816042-444d641267d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"); }
     .hero__background--blog {
       background-image: url("https://images.unsplash.com/photo-1562447208-3d5f81e66179?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"); }
     .hero__background--ios {
@@ -611,10 +613,27 @@ body {
     .blog-post {
       font-size: 2.4rem; } }
   .blog-post__content {
-    margin-top: 1.6rem; }
+    margin: 1.6rem 0; }
     @media only screen and (max-width: 37.5em) {
       .blog-post__content {
         font-size: 2.4rem; } }
+  .blog-post__details {
+    width: 100%;
+    padding: 4rem 6rem;
+    margin: 3rem 0;
+    font-style: italic;
+    border-radius: .4rem;
+    background-color: var(--color-grey-light-1);
+    color: var(--color-grey-dark-2); }
+  .blog-post__image-container {
+    width: 100%;
+    margin: 3rem 0; }
+  .blog-post__image {
+    width: 100%; }
+  .blog-post__image-caption {
+    font-size: 1.4rem;
+    font-family: var(--font-serif);
+    text-align: center; }
 
 .footer {
   display: flex;
