@@ -4,7 +4,7 @@
     font-family: var(--font-sans);
 
     @include respond(tab-port) {
-        padding: 6rem 6rem;
+        padding: 2rem 2rem;
     }
 
     @include respond(phone) {
@@ -12,9 +12,34 @@
     }
 
     &__content {
-        margin-top: 1.6rem;
+        margin: 1.6rem 0;
         @include respond(phone) {
             font-size: 2.4rem;
         }
+    }
+
+    &__details {
+        width: 100%;
+        padding: 4rem 6rem;
+        margin: 3rem 0;
+        font-style: italic;
+        border-radius: .4rem;
+        background-color: var(--color-grey-light-1);
+        color: var(--color-grey-dark-2);
+    }
+
+    &__image-container {
+        width: 100%;
+        margin: 3rem 0;
+    }
+
+    &__image {
+        width: 100%;
+    }
+
+    &__image-caption {
+        font-size: 1.4rem;
+        font-family: var(--font-serif);
+        text-align: center;
     }
 }
