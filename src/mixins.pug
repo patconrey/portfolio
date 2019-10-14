@@ -55,3 +55,15 @@ mixin blog_preview(title, description, link, image_link, date)
                 h1.blog-preview__title= title
                 p.description= description
                 span(class="blog-preview__date description")= date
+
+mixin my_twitter
+    +twitter_card( "Patrick Conrey", "@patrick_conrey", "https://pbs.twimg.com/profile_images/1162799469743738881/dBHUPvod_400x400.jpg", "https://twitter.com/patrick_conrey")
+
+mixin twitter_card(name, handle, profile_image, link)
+    a(href=link class="twitter-card__link" target="_blank")
+        .twitter-card
+            figure.twitter-card__image-container
+                img(class="twitter-card__image" src=profile_image)
+            .twitter-card__info-container
+                span.twitter-card__name= name
+                spane.twitter-card__handle= handle

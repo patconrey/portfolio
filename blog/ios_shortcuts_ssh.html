@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Pat Conrey Blog</title><meta name="author" content="Patrick Conrey"/><meta name="description" content="A portfolio of iOS, web, and machine learning development."/><meta name="keywords" content="ios,machine,learning,development,web,pat conrey"/><meta property="og:title" content="Blog | Pat Conrey"/><meta property="og:description" content="Pat Conrey's Blog"/><meta property="og:image" content="https://patconrey.com/img/hero.jpg"/><meta property="og:url" content="http://patconrey.com"/><meta name="twitter:card" content="summary_large_image"/><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:300,400,700,900|Open+Sans:300,400,600,700,800" type="text/css"/><link rel="stylesheet" href="../css/style.css" type="text/css"/><link rel="stylesheet" href="../css/prism.css" type="text/css"/><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/></head><body><header class="main-menu"><a class="main-menu__toggle" id="main-menu-toggle" href="#main-menu" aria-label="Open main menu"><span class="sr-only">Open main menu</span><i class="material-icons" aria-hidden="true">menu</i></a><nav class="main-menu__navigation" id="main-menu" aria-label="Main menu"><a class="main-menu__menu-close" href="#main-menu-toggle" id="main-menu-close" aria-label="Close main menu"><span class="sr-only">Close main menu</span><i class="material-icons" aria-hidden="true">close</i></a><ul class="main-menu__nav-items" id="navigation-menu"><li class="main-menu__item"><a class="main-menu__link" href="/">About Me</a></li><li class="main-menu__item"><a class="main-menu__link" href="/ios.html">iOS</a></li><li class="main-menu__item"><a class="main-menu__link" href="/web.html">Web</a></li><li class="main-menu__item"><a class="main-menu__link main-menu__link--active" href="/blog.html">Blog</a></li></ul></nav><a class="backdrop" href="#main-menu-toggle" tabindex="-1" aria-hidden="true" hidden="hidden"></a></header><header class="hero"><div class="hero__background hero__background--blog-ssh-shortcuts"></div><div class="hero__message"><h1 class="heading-primary">iOS 13 Shortcuts</h1><p class="description">Let's use iOS 13 shortcuts to train a neural network on a server. Buzzword city.</p><p class="description">Photo by
+<a href="https://unsplash.com/@arnelhasanovic" target="_blank">Arnel Hasanovic</a>
+on Unsplash.</p><br/><br/><p class="description">October 14th, 2019.</p></div></header><main><section class="blog-post"><h1 class="heading-primary">A couple things</h1><p class="blog-post__content">First: I used this post as an excuse to learn how to format code on my site. <pre class="blog-post__code-container"><code class="language-shell">echo Prism.js is great.</code></pre>The code above is formatted through a library called <a href="https://prismjs.com/" target="_blank">Prism.js.</a>
+It's fabulous and I love it.
+I hope you like it too! I'm going to have a lot of code on this post for no reason at all.
+It might be a little overkill but I'm excited to use it!</p><p class="blog-post__content">Second: this is a convenient place to mention that all of my code is licensed under <a href="https://firstdonoharm.dev/" target="_blank">The Hippocratic License.</a>
+If you want to use my code, feel free. If you're
+morally bankrupt (ICE agents, I'm looking at you!), then kindly leave.</p><p class="blog-post__content">That last part was sort of heavy. I'm sorry. On to the exciting stuff!  </p><h1 class="heading-primary">The problem</h1><p class="blog-post__content">Training a neural network can take a lot of time. If it takes a while, you want to be
+notified right away about the results. Did your experiment work well? Do you need another
+iteration? What are the insights? Often, you're not training on your main laptop or desktop.
+You're training on a server. So it's even harder to be aware of when an experiment concludes.</p><p class="blog-post__content">This can get super annoying. It would be amazing if I could initiate training from my phone
+and get a push notification once it's complete. I could also build a small script that
+sends me an email with the results. That last part is a little out of scope for this post
+so I'm going to ignore it for now.</p><p class="blog-post__content">To simulate this problem, I'm going to set up a Raspberry Pi that will act as our server. In all
+fairness, it basically is a server. But, it's not going to be able to train a neural network. 
+This post isn't about coding a net in PyTorch, though. It's about telling a server to do something
+via an app you might already have! If you don't have a Raspberry Pi, you can also use a handy computer
+that you have access to.</p><p class="blog-post__content">This is the problem we're solving: remote initiation of a job on a server and real time notification of
+the work's completion. An added bonus: you'll be able to tell Siri to "start training on remote cluster", which
+gets me as close as I've ever been to my long time dream of being Tony Stark.</p><p class="blog-post__content">Let's split up the work into two parts: the server and the phone, or, the backend and the client, respectively.</p><h1 class="heading-primary">The backend</h1><p class="blog-post__content">This part is super simple! All you need to do is write a script and put it somehere. If you're doing this to
+remotely train a neural network, you might have a script that looks a lot like
+<a href="https://github.com/patconrey/CNN-Example/blob/master/cnn.py" target="_blank">this.</a>
+If you're just following along and want something to test with, here's a very simply python script that prints
+"Hey, isn't this awesome?" after 10 seconds:<pre class="blog-post__code-container"><code class="language-python">import time
+
+time.sleep(10) # Set a delay for 10 seconds
+print("Hey, isn't this awesome?")
+
+# This code is licensed under The Hippocratic License</code></pre></p><p class="blog-post__content">If you're using a Raspberry Pi or a nearby computer, put your script somewhere you'll remember. If you're using a server, I'm sure
+you already have the filesystem organized the way you want, that's awesome! For this, I put the script at the root level of the
+Pi. You can put it wherever you want, though!</p><p class="blog-post__content">Next, we have to make sure we have access to the backend. As the post title suggests, we're going to use SSH. If you're
+using a Pi,
+<a href="https://www.raspberrypi.org/documentation/remote-access/ssh/" target="_blank">here's</a>
+a great tutorial from the official documentation on how to enable SSH access. You'll need to note the IP address of the Pi,
+the username, and the password.</p><p class="blog-post__content">If you're using a Mac, it's really simple! Navigate to the System Preferences App and click on "Sharing".</p><figure class="blog-post__image-container"><img class="blog-post__image" src="../img/remote_login_ssh.png" alt="Allow &quot;Remote Login&quot;."/><figcaption class="blog-post__image-caption">The System Preferences page for Sharing.</figcaption></figure><p class="blog-post__content">From here, just click on the box next to Remote Login. This will enable people to SSH into your laptop. This is probably
+pretty safe if you have a password set! Once you enable Remote Login, some information will pop up that will read something
+like "To log in to this computer remotely, type "ssh user@XX.X.X.XXX"". Where I've typed "user", you should see the username
+of the account on the Mac that you're currently logged in to. The XX.X.X.XXX number represents your local IP address. You'll 
+need both of these, as well as the password you use to log in.</p><p class="blog-post__content">There are ways of doing this for Windows machines, but I don't use one so I'm not sure how! I also don't have one at my disposal
+to check, so I don't feel comfortable endorsing a tutorial. There seem to be plenty, though.</p><p class="blog-post__content">If you're using a server, I'm going to bet you already know how to SSH into it.</p><p class="blog-post__content">STOP! Before you go on, make sure that you know the IP address, username, and password of the machine you're planning
+to SSH into. You also need to know where you saved the script you plan to run.</p><h1 class="heading-primary">The client</h1><p class="blog-post__content">Awesome! We've made it halfway through! Right now you should have noted everything but your password. I say you shouldn't
+have noted down your password becuase that's awful security. Never write down your password! Onto the client.</p><p class="blog-post__content">I don't know if you've played with Shortcuts before. It's amazing. It is seriously so much fun. Scratch was the first exposure I had
+to programming and this reminds me so much of it. No coding is necessary for this step, though! Shortcuts works by assembling
+programs block-by-block. The app provides tons of blocks for you: opening certain apps, texting and calling people, location based
+queries, and programming-centric things like if statements and delays, setting brightness, and delivering push notifications. 
+It is super powerful and I love it. </p><p class="blog-post__content">Go ahead and open the app up. In the top right corner, select the plus button. Each block is called an Action. Click the button that
+says "Add Action". Look around! There's lots of stuff here. We're interested in the "Scripting" category, so tap that. Scroll down
+until you see an Action called "Run Script Over SSH". Select it, once you find it. Once you see it pop up in your list of Actions,
+tap show more. A list will expand with inputs that look pretty familiar. Go ahead and fill in the Host (i.e., your IP address), 
+the User (i.e., your username), and the Password fields. If you're using a server, you may need to change the password type to SSH key.</p><p class="blog-post__content">Down below, there is a section for "Script". In it, we'll write the script that will be executed on the Raspberry Pi. At this point,
+treat the script input here like the terminal on your remote machine. If we have a Python script on the Pi at the root level, the
+script we'd type in here would look like:</p><pre class="blog-post__code-container"><code class="language-shell">python my_script.py</code></pre><p class="blog-post__content">If your script lies in another directory, no problem!</p><pre class="blog-post__code-container"><code class="language-shell">cd path/to/the/right/directory
+python my_script.py</code></pre><p class="blog-post__content">If you were to click save, walk through the next prompts, and run this shortcut, it would totally work. Your Pi would execute the
+command and you could call it a day. But! What if your script has output that you want to capture and see, like the python script
+above? Or perhaps, training your model, your script prints out the training loss per epoch and the accuracy of the validation.
+You'd want to see all of that content. And it might take a while to execute. How do we do this?</p><p class="blog-post__content">We're going to add another block called "Show Notification" (it's under the "Notification" section). You will be prompted to 
+supply a string in place of "Hello Word". I typed in "Training Finished!". Under "Show More", select "Title" and, in the
+bar that pops up over the keyboard, select "Shell Script Result". Shortcuts will automatically wire the previous Action's
+result to the current action. The "Shell Script Result" parameter represents the output of the script that ran. If you're
+using the Python script above, that would be "Hey, isn't this awesome?", since it's printed out. Most importantly, the script above has a timeout
+of 10 seconds. So now, you can close the app and, after 10 seconds, you'll get a push notification with the output information
+from the script running remotely. Wild!
+Here's what the final Shortcut looks like:</p><figure class="blog-post__image-container blog-post__image-container--small"><img class="blog-post__image" src="../img/ssh_screenshot.png" alt="The final Shortcut: a Run Script Over SSH Action followed by a Show Notification Action"/><figcaption class="blog-post__image-caption">The final Shortcut.</figcaption></figure><p class="blog-post__content">Step through the next prompts about saving the Shortcut, then you'll see it listed in your Shortcuts. 
+Note, if you wanted to tell Siri "Hey Siri, start training on the remote cluster", then just name the Shortcut
+"Start training on the remote cluster". This is super cool approximately one time. And it's never cool in public. 
+Anyway, once it's saved go ahead and tap it!
+If you've never done it before on your current network, you may get a notification about establishing the authenticity of the
+remote server. That's fine, click Yes.</p><h1 class="heading-primary">Moving forward</h1><p class="blog-post__content">There are so many things I want to do with this. The next step for me is going to be setting this up with my research group's
+server and writing a script that will send me emails with model artifacts once things are finished training. There are 
+location services based Actions you can use, and I can't wait to play with them. This has the 
+potential to automate a lot of tedious exercises. It's also super cool and a lot of fun.</p><p class="blog-post__content">If you're interested in keeping up with me, feel free to follow my Twitter account linked below! Twitter is also the
+best way to reach me, so if you have questions or comments!</p><a class="twitter-card__link" href="https://twitter.com/patrick_conrey" target="_blank"><div class="twitter-card"><figure class="twitter-card__image-container"><img class="twitter-card__image" src="https://pbs.twimg.com/profile_images/1162799469743738881/dBHUPvod_400x400.jpg"/></figure><div class="twitter-card__info-container"><span class="twitter-card__name">Patrick Conrey</span><spane class="twitter-card__handle">@patrick_conrey</spane></div></div></a></section></main><script src="../js/prism.js"></script></body><footer class="footer"><p class="footer__text">&copy; 2019 by Pat Conrey</p></footer></html>
