@@ -3,6 +3,8 @@
     display: flex;
     padding: 2rem;
     transition: all 0.2s;
+    margin-top: 2rem;
+
     @include respond(phone) {
         flex-direction: column;
     }
