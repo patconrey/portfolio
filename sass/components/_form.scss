@@ -1,0 +1,112 @@
+$purple_haze: rgba(134, 28, 221, 0.287);
+$purple_solid: rgb(134, 28, 221);
+
+.form {
+    margin: 2rem 0;
+    width: 100%;
+    padding: 4rem 0;
+
+    &__content {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+
+        @include respond(phone) {
+            width: 100%;
+        }
+    }
+
+    &__group {
+        position: relative;
+        padding-top: 1.2rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__honeypot {
+        display: none;
+    }
+
+    &__label {
+        position: absolute;
+        top: -1rem;
+        left: 0;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-grey-light-2);
+        transition: all .5s;
+    }
+
+    &__input {
+        padding: 1.4rem;
+        font-size: 1.4rem;
+        border: none;
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: .5rem;
+        transition: all .2s;
+        box-shadow: 0 0px 1px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        color: var(--color-grey-dark-2);
+        @include respond(phone) {
+            font-size: 2rem;
+        }
+
+        &:invalid {
+            box-shadow: 0 0 0 1px rgba(211, 50, 50, 0.3);
+            border: 1px solid transparent;
+            & + .form__label {
+                color: rgb(231, 75, 61);
+            }
+        }
+
+        &:focus {
+            outline: none;
+            border: 1px solid transparent;
+            box-shadow: 0 0 0 1px $purple_haze, 0 1px 1px 0 rgba(0,0,0,.07), 0 0 0 4px $purple_haze;
+            &:invalid {
+                box-shadow: 0 0 0 1px rgba(211, 50, 50, 0.3), 0 1px 1px 0 rgba(0,0,0,.07), 0 0 0 4px rgba(211, 50, 50, 0.3);
+            }
+        }
+
+        &:focus + .form__label {
+            color: var(--color-grey-dark-2);
+        }
+    }
+
+    &__button {
+        padding: 1.4rem;
+        background-color: $purple_solid;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        color: #fff;
+        border: none;
+        outline: none;
+        font-size: 1.4rem;
+        font-weight: var(--font-weight-bold);
+        border-radius: .5rem;
+        cursor: pointer;
+        transition: all .2s;
+
+        @include respond(phone) {
+            font-size: 1.8rem;
+        }
+
+        &:hover {
+            background-color: lighten($purple_solid, 6%);
+            transform: translateY(-.3rem);
+        }
+
+        &:focus {
+            color: lighten($purple_solid, 40%);
+            box-shadow: 0 1px 1px 0 rgba(0,0,0,.07), 0 0 0 4px $purple_haze;
+            transform: translateY(-.3rem);
+        }
+    }
+}

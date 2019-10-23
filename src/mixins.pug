@@ -59,6 +59,20 @@ mixin blog_preview(title, description, link, image_link, date)
 mixin my_twitter
     +twitter_card( "Patrick Conrey", "@patrick_conrey", "https://pbs.twimg.com/profile_images/1162799469743738881/dBHUPvod_400x400.jpg", "https://twitter.com/patrick_conrey")
 
+mixin emailing_list_sign_up
+    form.form(name="contact" method="POST" data-netlify="true")
+        .form__content
+            .form__group
+                input.form__input(type="text" name="name" id="contact-name" placeholder="First Last")
+                label.form__label(for="contact-name") Name
+            .form__group
+                input.form__input(type="email" name="email" id="contact-email" placeholder="example@something.com")
+                label.form__label(for="contact-email") Email
+            .form__group.form__honeypot
+                input.form__input.form__honeypot(name="bot-field" id="bot-field" tabindex="-1")
+                label.form__label(for="bot-field") Bots
+            button.form__button(type="submit") Submit &rarr;
+
 mixin twitter_card(name, handle, profile_image, link)
     a(href=link class="twitter-card__link" target="_blank")
         .twitter-card
