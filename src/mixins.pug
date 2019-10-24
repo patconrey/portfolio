@@ -63,10 +63,10 @@ mixin emailing_list_sign_up
     form.form(name="contact" method="POST" data-netlify="true")
         .form__content
             .form__group
-                input.form__input(type="text" name="name" id="contact-name" placeholder="First Last")
+                input.form__input(type="text" name="name" id="contact-name" placeholder="First Last" required)
                 label.form__label(for="contact-name") Name
             .form__group
-                input.form__input(type="email" name="email" id="contact-email" placeholder="example@something.com")
+                input.form__input(type="email" name="email" id="contact-email" placeholder="example@something.com" required)
                 label.form__label(for="contact-email") Email
             .form__group.form__honeypot
                 input.form__input.form__honeypot(name="bot-field" id="bot-field" tabindex="-1")
