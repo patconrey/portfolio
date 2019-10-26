@@ -1,0 +1,89 @@
+extends blog_base
+include ../mixins
+
+block og
+    meta(property="og:title" content="Blog | I'm Deleting My Facebook")
+    meta(property="og:description" content="Why I'm deleting and how we can keep in touch.")
+    meta(property="og:image" content="https://images.unsplash.com/photo-1531835415135-698b8d7e0ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
+    meta(property="og:url" content="http://patconrey.com/blog")
+
+block navigation
+    +nav_bar("blog")
+
+block header
+    header(class="hero")
+        div(class="hero__background hero__background--blog-facebook")
+        .hero__message
+            h1(class="heading-primary") Deleting Facebook
+            p(class="description")
+                | I'm going to delete my Facebook account but I want to keep in touch with you!
+            p(class="description")
+                | Photo by
+                |
+                a(href="https://unsplash.com/@nate_dumlao" target="_blank") Nathan Dumlao
+                |
+                | on Unsplash.
+            br
+            br
+            p(class="description")
+                | October 23rd, 2019.
+
+block body
+    section.blog-post
+        h1.heading-primary Not to preach, but
+        p.blog-post__content
+            | In short, I think Facebook has grossly mishandled their role as one of the largest,
+            | if not the largest, content moderators in the world. They are entirely responsible
+            | for the content hundreds of millions of people consume. They have recently refused
+            | to prevent disinformation from being spread on their service to the disservice of
+            | the democratic processes of the United States (and probably so, so many other countries).
+            | As a company, they are not held accountable to the degree which ought
+            | to be expected of a massive arbiter of information. 
+        p.blog-post__content
+            | I want to love Facebook. It's done some seriously incredible things in advancing
+            | technology. But it's fallen so short of any well intentioned goals it might have once
+            | had for me not to care anymore. I hope things improve and I can come back. However,
+            | I doubt they will.
+        p.blog-post__content
+            | Without getting too much into the weeds, I think it's time to remove myself from their
+            | platform. I can't stomach being complicit in the undoing of honest, well-informed conversation and
+            | I cannot, in good conscience, play audience to their unethical use of data. 
+        p.blog-post__content
+            | So long, Facebook.
+
+        h1.heading-primary A small study
+        p.blog-post__content
+            | I did a small study (n = 40) about social media usage among young-ish people.
+            | You can see a break down of the participants' age below:
+        figure.blog-post__image-container.blog-post__image-container--small
+            img(class="blog-post__image" src="../img/social_media_age.png" alt="Age distribution of participants, average near 22.")
+            figcaption(class="blog-post__image-caption") The age distribution of people who participated in my study.
+        p.blog-post__content
+            | The average participant was somewhere between 22 and 23 years old. I found that most people (57.5%) believe their
+            | followers wanted to see meaningful posts about their lives. 
+        figure.blog-post__image-container.blog-post__image-container--small
+            img(class="blog-post__image" src="../img/social_media_chart.png" alt="Number of people who think their followers want to see life updates.")
+            figcaption(class="blog-post__image-caption") A breakdown of participants' opinions about what their followers wanted to see.
+        p.blog-post__content
+            | I agree with the majority of people: other people want to see updates about my life, whether it's 
+            | teachers that had me in class, old neighbors, old friends. There are lots of people whom I care about that I don't have
+            | any connection with outside of Facebook. It's tragic. Especially when you want to leave Facebook.
+            | In fact, I've found that I was conflating the decisions to delete Facebook and lose contact with people
+            | that I'll never get the chance to talk to again. To those wondering: these decisions are not the same
+            | thing. There are loads of other ways we can stay in touch.
+
+        h1.heading-primary Let's keep in touch
+        p.blog-post__content
+            | I think the best way you'll be able to get updates from me about my life is through my 
+            | newly christened "mailing list". God, I feel so lame saying that. I'll send out emails
+            | semi-regularly to keep you updated with my life. Of course, this blog should also
+            | serve as a fairly good indication of what I'm up to; however, I want to use the email list
+            | as a way to update my friends about what I'm personally up to, not neccessarily what I'm 
+            | working on or studying. If you want to join in, enter your email below! I promise I won't
+            | be spamming you or selling your data to advertisers.
+        +emailing_list_sign_up()
+        p.blog-post__content
+            | There are lots of ways we can keep in touch besides the email list! I'm still on Twitter and Instagram. 
+            | Yes, I know Facebook owns Instagram. I'm working on leaving that platform too. It's
+            | a game of inches. Here's my Twitter! Feel free to follow me :)
+        +my_twitter()

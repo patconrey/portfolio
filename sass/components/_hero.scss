@@ -35,6 +35,9 @@
         background-repeat: no-repeat;
         background-size: cover;
 
+        &--blog-facebook {
+            background-image: url("https://images.unsplash.com/photo-1531835415135-698b8d7e0ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+        }
         &--blog-ssh-shortcuts {
             background-image: url("https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
         }
