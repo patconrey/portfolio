@@ -1,0 +1,42 @@
+extends blog_base
+include ../mixins
+
+block og
+    meta(property="og:title" content="Blog | MLSP Experiment")
+    meta(property="og:description" content="A simple experiment for MLSP.")
+    meta(property="og:image" content="https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=792&q=80")
+    meta(property="og:url" content="http://patconrey.com/mlsp_experiments.pug")
+
+block navigation
+    +nav_bar("blog")
+
+block header
+    header(class="hero")
+        div(class="hero__background hero__background--blog-mlsp-experiment")
+        .hero__message
+            h1(class="heading-primary") MLSP Experiments
+            p(class="description")
+                | If you're looking for the experiment sets for my MLSP project, they're below!
+            p(class="description")
+                | Photo by
+                |
+                a(href="https://unsplash.com/@joelfilip" target="_blank") Joel Filipe
+                |
+                | on Unsplash.
+            br
+            br
+            p(class="description")
+                | November 7th, 2019.
+
+block body
+    section.blog-post
+        h1.heading-primary The Experiments
+        p.blog-post__content
+            | There are two experiment sets. One of them is just testing the ability of people to 
+            | differentiate between "clean" bonafide and spoofed speech. The other set is testing 
+            | people's ability to distinguish processed bonafide and spoofed speech.
+        p.blog-post__content
+            | The .zip files have README's in them that describe how to run the experiments. Thanks
+            | for checking them out! Click on the links below to download them.
+        +download("Experiment Set 1", "../img/download_icon.png", "../mlsp_experiment_1.zip")
+        +download("Experiment Set 2", "../img/download_icon.png", "../mlsp_experiment_2.zip")
