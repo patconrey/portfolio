@@ -59,6 +59,14 @@ mixin blog_preview(title, description, link, image_link, date)
 mixin my_twitter
     +twitter_card( "Patrick Conrey", "@patrick_conrey", "https://pbs.twimg.com/profile_images/1162799469743738881/dBHUPvod_400x400.jpg", "https://twitter.com/patrick_conrey")
 
+mixin download(name, icon_link, link)
+    a(href=link class="download__link")
+        .download
+            figure.download__image-container
+                img(class="download__image" src=icon_link)
+            .download__info-container
+                span.download__name= name
+
 mixin emailing_list_sign_up
     form.form(name="contact" method="POST" data-netlify="true")
         .form__content
