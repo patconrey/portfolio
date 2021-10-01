@@ -1,0 +1,23 @@
+extends base
+include mixins
+
+block navigation
+    +nav_bar("web")
+
+block header
+    header(class="hero")
+        div(class="hero__background hero__background--build")
+        .hero__message
+            h1(class="heading-primary") Current Builds
+            p(class="description")
+                | Checking on a build that's running?
+
+block body
+    section(class="section section-no-flex")
+
+
+block scripts
+    <script>
+        | console.log("hello.")
+    </script>
+         
